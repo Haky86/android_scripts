@@ -24,7 +24,7 @@ setup_environment() {
             echo -e "${GREEN}Installing build packages...${NC}"
             sudo apt update
             sudo apt install -y bc bison build-essential curl flex g++-multilib gcc-multilib \
-            git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev \
+            git gnupg gperf imagemagick lib32readline-dev lib32z1-dev \
             libssl-dev libxml2-utils lzop pngcrush rsync schedtool \
             squashfs-tools xsltproc zip zlib1g-dev git-lfs
             ;;
