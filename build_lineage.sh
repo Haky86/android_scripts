@@ -102,7 +102,15 @@ sync_source() {
         cd ~/android/lineage
         repo init --depth=1 -u https://github.com/LineageOS/android.git -b "$branch" --git-lfs
         repo sync -j"$jobs"
-        echo -e "${GREEN}Source synced to ~/android/lineage"
+        echo -e "${GREEN}Source synced to ~/android/lineage${NC}"
+
+        # Prompt to cd into ~/android/lineage after sync
+        read -p "Do you want to switch to ~/android/lineage directory now? (y/n): " cd_choice
+        if [[ "$cd_choice" =~ ^[Yy]$ ]]; then
+            cd ~/android/lineage
+            bash --rcfile <(echo "cd ~/android/lineage; exec bash")
+        fi
+
     else
         echo "Invalid number of jobs."
     fi
