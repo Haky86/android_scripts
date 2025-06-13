@@ -102,7 +102,7 @@ sync_source() {
         cd ~/android/lineage
         repo init --depth=1 -u https://github.com/LineageOS/android.git -b "$branch" --git-lfs
         repo sync -j"$jobs"
-        echo -e "${GREEN}Source synced to ~/android/$branch${NC}"
+        echo -e "${GREEN}Source synced to ~/android/lineage"
     else
         echo "Invalid number of jobs."
     fi
